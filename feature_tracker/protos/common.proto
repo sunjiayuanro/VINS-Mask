@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+// Sun Jiayuan
+
+package VIO.Api.Common;
+
+// empty
+message Empty {
+}
+
+// string
+message ProtoString {
+  string data = 1;
+}
+
+// state
+enum StateEnum {
+  PENDING   = 0;
+  ACTIVE    = 1;
+  PREEMPTED = 2;
+  SUCCEEDED = 3;
+  ABORTED   = 4;
+  REJECTED  = 5;
+  PREEMPTING= 6;
+  RECALLING = 7;
+  RECALLED  = 8;
+  LOST      = 9;
+}
+
+// level
+enum LevelEnum {
+  OK    = 0;
+  WARN  = 1;
+  ERROR = 2;
+  STALE = 3;
+}
+
+//
+message CommandFeedback {
+  uint32 status = 1;
+}
+
+// robot pose (2D)
+message Pose {
+  float x       = 1;
+  float y       = 2;
+  float orientation   = 3;
+}
+
+// point 2D
+message Point2D {
+  float x = 1;
+  float y = 2;
+}
+
+// int
+message ProtoInt {
+  int32 data = 1;
+}
+
+// bool
+message ProtoBool {
+  bool data = 1;
+}
+
+// float
+message ProtoFloat {
+  float data = 1;
+}
+
+message Timestamp {
+  uint32 sec  = 1; //epoch in seconds since 1970
+  uint32 usec = 2; //microseconds after the second (0-999999)
+}
+
+message TimestampStr {
+  string time = 1; //sec.usec
+}
+
+// laser pointcloud
+message PointCloudXY {
+  double stamp              = 1;
+  repeated Point2D points   = 2;
+}

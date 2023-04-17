@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// Sun Jiayuan
+
+import "common.proto";
+
+package VIO.Api.ServiceRpc;
+
+service Rpc {
+  // Check
+  // @return Common.StateEnum
+  rpc CheckCommunication (VIO.Api.Common.ProtoString) returns (VIO.Api.Common.CommandFeedback);// @RPC_ID=0
+
+  // SuperPoint
+  rpc GetSuperPoint (VIO.Api.Common.ProtoString) returns (VIO.Api.Common.PointCloudXY);// @RPC_ID=1
+
+  // ...
+
+}
