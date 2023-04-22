@@ -1,8 +1,6 @@
 ## VINS-Mask
 A ROI-mask Feature Tracker for Monocular Visual-Inertial System
 
-<div align="center">
-<img src="demo.gif" width=99% />
-</div>
+[project page](https://sunjiayuanro.github.io/vins_mask/)
 
 **TODO**
